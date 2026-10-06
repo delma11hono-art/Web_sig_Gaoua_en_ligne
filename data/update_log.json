@@ -1,0 +1,20 @@
+[
+  {
+    "date": "2026-09-22",
+    "dataset": "Facteurs physiques et susceptibilité",
+    "responsible": "Dilma Honorine",
+    "action": "Traitement QGIS transmis"
+  },
+  {
+    "date": "2026-09-22",
+    "dataset": "Occupation du sol",
+    "responsible": "Dilma Honorine",
+    "action": "Raster à cinq classes transmis"
+  },
+  {
+    "date": "2026-09-30",
+    "dataset": "Diagnostic Web-SIG",
+    "responsible": "Traitement reproductible du mémoire",
+    "action": "Contrôle, harmonisation et extraction des indicateurs"
+  }
+]

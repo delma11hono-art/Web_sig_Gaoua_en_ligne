@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Web-SIG d’aide à la décision sur la susceptibilité à une pollution mercurielle dans la commune de Gaoua.">
+  <title>MercureScope Gaoua — Web-SIG décisionnel</title>
+  <link rel="stylesheet" href="vendor/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">Hg</span>
+      <div>
+        <strong>MercureScope Gaoua</strong>
+        <span>Analyse, scénarios et priorisation territoriale</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <span class="status"><i></i>Données d’enquête 2026 · n = 253</span>
+      <button id="exportBtn" class="button secondary">Exporter le classement</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <aside class="panel controls" aria-label="Paramètres de décision">
+      <div class="panel-heading">
+        <p class="eyebrow">Moteur d’aide à la décision</p>
+        <h1>Construire un scénario</h1>
+        <p>Ajustez les poids ou les scores du site. Le classement est recalculé instantanément.</p>
+      </div>
+
+      <label class="field-label" for="siteSelect">Site analysé</label>
+      <select id="siteSelect" class="select"></select>
+
+      <section class="control-section">
+        <div class="section-title">
+          <h2>Poids AHP</h2>
+          <button id="resetWeights" class="text-button">Réinitialiser</button>
+        </div>
+        <div id="weightControls"></div>
+        <p class="mini-note">Les poids sont normalisés automatiquement à 100 %. CR de la matrice initiale : 2,12 %.</p>
+      </section>
+
+      <section class="control-section">
+        <div class="section-title">
+          <h2>Scores physiques du site</h2>
+          <button id="resetScores" class="text-button">Données réelles</button>
+        </div>
+        <div id="scoreControls"></div>
+        
+      </section>
+
+      <section class="control-section compact">
+        <div class="toggle-row">
+          <div><strong>Zone d’attention</strong><span>Rayon paramétrable autour des sites</span></div>
+          <label class="switch"><input id="bufferToggle" type="checkbox" checked><span></span></label>
+        </div>
+        <div class="range-row radius-row">
+          <div class="range-label"><span>Rayon de proximité</span><strong id="radiusValue">2 000 m</strong></div>
+          <input id="radiusInput" type="range" min="250" max="5000" step="250" value="2000" aria-label="Rayon de proximité">
+        </div>
+        <div class="toggle-row">
+          <div><strong>Masquer les faibles priorités</strong><span>Concentrer la lecture sur l’action</span></div>
+          <label class="switch"><input id="filterToggle" type="checkbox"><span></span></label>
+        </div>
+      </section>
+
+      <section class="control-section compact">
+        <h2>Couches cartographiques</h2>
+        <p class="mini-note">Les traitements sont interrogés sur une grille commune de 30 m. La couche d’occupation du sol conserve la légende demandée : végétation, sol nu, habitat, eau et culture.</p>
+      </section>
+
+      <section class="control-section compact">
+        <h2>Ajouter des données</h2><div class="orpaillage-form">
+  <strong>Diagnostic par lot</strong>
+  <label for="lotInput" class="upload-zone">
+    <strong>Importer plusieurs photos ou un CSV</strong>
+    <span>Fichier CSV : nom;latitude;longitude</span>
+    <input id="lotInput" type="file" accept="image/*,.csv" multiple>
+  </label>
+  <button id="lotExportBtn" class="point-action" type="button">Exporter les résultats (CSV)</button>
+  <div id="lotResult" class="mini-note"></div>
+</div>
+        <div class="orpaillage-form">
+  <strong>Site d’orpaillage à diagnostiquer</strong>
+  <label class="field-label" for="orName">Nom du site</label>
+  <input id="orName" class="select" type="text" placeholder="Ex. Site orpaillage 1">
+  <label class="field-label" for="orLat">Latitude (ex. 10.285)</label>
+  <input id="orLat" class="select" type="text" inputmode="decimal" placeholder="10.285">
+  <label class="field-label" for="orLng">Longitude (ex. -3.205, négative au Burkina)</label>
+  <input id="orLng" class="select" type="text" inputmode="decimal" placeholder="-3.205">
+  <button id="orBtn" class="point-action" type="button">Diagnostiquer ce site</button>
+  <button id="orExportBtn" class="point-action" type="button">Exporter le diagnostic (CSV)</button>
+  <p class="mini-note">Le rayon utilisé est celui du réglage « Rayon de proximité ».</p>
+</div>
+        <label for="geojsonInput" class="upload-zone">
+          <strong>Importer un GeoJSON</strong>
+          <span>Sites, observations ou limites</span>
+          <input id="geojsonInput" type="file" accept=".json,.geojson,application/geo+json,application/json">
+        </label>
+      </section>
+    </aside>
+
+    <section class="map-shell" aria-label="Carte interactive">
+      <div id="map"></div>
+      <div class="map-toolbar">
+        <button id="fitBtn" title="Recentrer la carte">Recentrer</button>
+        <button id="analysePointBtn" title="Cliquer un point à analyser">Analyser un point</button>
+      </div>
+      <div class="legend">
+        <strong>Priorité d’intervention</strong>
+        <span><i class="dot low"></i>Faible</span>
+        <span><i class="dot medium"></i>Modérée</span>
+        <span><i class="dot high"></i>Élevée</span>
+      </div>
+      <div id="pointResult" class="point-result" hidden></div>
+    </section>
+
+    <aside class="panel insights" aria-label="Résultats du scénario">
+      <div class="panel-heading result-heading">
+        <p class="eyebrow">Diagnostic sélectionné</p>
+        <h2 id="resultSite">—</h2>
+        <span id="priorityBadge" class="priority-badge">—</span>
+      </div>
+
+      <div class="score-card">
+        <div class="gauge" id="gauge"><span id="gaugeValue">—</span></div>
+        <div><span>Indice de priorité</span><strong id="priorityScore">—</strong><small>sur 100</small></div>
+      </div>
+
+      <div class="metric-grid">
+        <article><span>Susceptibilité</span><strong id="susceptibilityScore">—</strong><small>scénario physique / 5</small></article>
+        <article><span>Perception</span><strong id="iprmScore">—</strong><small>IPRM / 100</small></article>
+        <article><span>Adaptation</span><strong id="icaScore">—</strong><small>ICA / 100</small></article>
+        <article><span>Sensibilisés</span><strong id="sensitizedScore">—</strong><small>répondants (%)</small></article>
+      </div>
+
+      <section class="recommendation">
+        <p class="eyebrow">Action suggérée</p>
+        <h3 id="recommendationTitle">—</h3>
+        <p id="recommendationText">Sélectionnez un site pour afficher une recommandation contextualisée.</p>
+      </section>
+
+      <section class="ranking-section">
+        <div class="section-title"><h2>Classement dynamique</h2><span id="rankingStamp">—</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Rang</th><th>Site</th><th>Indice</th><th>Niveau</th></tr></thead>
+            <tbody id="rankingBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="decision-section">
+        <div class="section-title"><h2>Signaux de décision</h2><span>Calculés automatiquement</span></div>
+        <div id="decisionSignals" class="decision-signals"></div>
+      </section>
+
+      <details class="method-note update-note" open>
+        <summary>Données mises à jour et responsables</summary>
+        <div id="updateLog">Chargement…</div>
+      </details>
+
+      <details class="method-note">
+        <summary>Méthode et limites</summary>
+        <p>Priorité = 65 % de susceptibilité physique + 35 % d’urgence sociale. L’urgence sociale combine faible adaptation, faible connaissance du danger et faible sensibilisation. Les clics hors des cinq sites produisent un diagnostic physique sur une grille de 30 m ; ils ne prouvent ni exposition ni contamination.</p>
+      </details>
+    </aside>
+  </main>
+
+  <footer>
+    <span>Prototype de mémoire · Commune de Gaoua, province du Poni</span>
+    <span>Coordonnées de ménages non publiées · Indicateurs sociaux agrégés</span>
+  </footer>
+
+  <script src="vendor/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+

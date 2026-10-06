@@ -1,0 +1,490 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.2194297,
+          10.3288055
+        ]
+      },
+      "properties": {
+        "name": "Sampoli",
+        "locality": "Sampoli",
+        "survey_n": 84,
+        "iprm": 59.33,
+        "ica": 27.08,
+        "knowledge_use_pct": 25.0,
+        "knowledge_danger_pct": 19.05,
+        "sensitized_pct": 4.76,
+        "alternative_water_pct": 9.52,
+        "factor_scores": {
+          "geology": 3,
+          "soil": 4,
+          "slope": 2,
+          "hydro": 5
+        },
+        "physical_wlc": 3.3312,
+        "susceptibility_class": 3,
+        "susceptibility_label": "Forte",
+        "landcover_class": 3,
+        "landcover_label": "Habitat",
+        "landcover_distance_m": {
+          "Végétation": 14.0,
+          "Sol nu": 55.9,
+          "Habitat": 0.0,
+          "Eau": 79.4,
+          "Culture": 29.5
+        },
+        "landcover_buffer_pct": {
+          "250": {
+            "Végétation": 78.45,
+            "Sol nu": 0.25,
+            "Habitat": 7.52,
+            "Eau": 0.25,
+            "Culture": 13.54
+          },
+          "500": {
+            "Végétation": 86.62,
+            "Sol nu": 0.07,
+            "Habitat": 2.36,
+            "Eau": 0.1,
+            "Culture": 10.84
+          },
+          "1000": {
+            "Végétation": 85.16,
+            "Sol nu": 0.04,
+            "Habitat": 2.97,
+            "Eau": 0.06,
+            "Culture": 11.77
+          },
+          "2000": {
+            "Végétation": 79.95,
+            "Sol nu": 0.32,
+            "Habitat": 3.68,
+            "Eau": 0.19,
+            "Culture": 15.85
+          }
+        },
+        "susceptibility_buffer_pct": {
+          "250": {
+            "Faible": 0.0,
+            "Moyenne": 47.82,
+            "Forte": 52.18
+          },
+          "500": {
+            "Faible": 0.66,
+            "Moyenne": 52.28,
+            "Forte": 47.06
+          },
+          "1000": {
+            "Faible": 3.09,
+            "Moyenne": 51.75,
+            "Forte": 45.16
+          },
+          "2000": {
+            "Faible": 4.49,
+            "Moyenne": 45.13,
+            "Forte": 50.39
+          }
+        },
+        "physical_source": "Traitements SIG transmis le 22 septembre 2026",
+        "updated_at": "2026-09-22",
+        "updated_by": "Dilma Honorine (mention portée sur les cartes transmises)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.2047902,
+          10.260883
+        ]
+      },
+      "properties": {
+        "name": "Danhal",
+        "locality": "Danhal",
+        "survey_n": 35,
+        "iprm": 69.52,
+        "ica": 38.57,
+        "knowledge_use_pct": 57.14,
+        "knowledge_danger_pct": 31.43,
+        "sensitized_pct": 11.43,
+        "alternative_water_pct": 34.29,
+        "factor_scores": {
+          "geology": 5,
+          "soil": 4,
+          "slope": 2,
+          "hydro": 3
+        },
+        "physical_wlc": 3.13,
+        "susceptibility_class": 2,
+        "susceptibility_label": "Moyenne",
+        "landcover_class": 1,
+        "landcover_label": "Végétation",
+        "landcover_distance_m": {
+          "Végétation": 0.0,
+          "Sol nu": 336.9,
+          "Habitat": 137.8,
+          "Eau": 199.5,
+          "Culture": 19.9
+        },
+        "landcover_buffer_pct": {
+          "250": {
+            "Végétation": 75.06,
+            "Sol nu": 0.0,
+            "Habitat": 3.53,
+            "Eau": 0.15,
+            "Culture": 21.25
+          },
+          "500": {
+            "Végétation": 82.9,
+            "Sol nu": 0.87,
+            "Habitat": 3.86,
+            "Eau": 0.04,
+            "Culture": 12.33
+          },
+          "1000": {
+            "Végétation": 80.77,
+            "Sol nu": 1.06,
+            "Habitat": 6.3,
+            "Eau": 0.01,
+            "Culture": 11.86
+          },
+          "2000": {
+            "Végétation": 87.08,
+            "Sol nu": 0.3,
+            "Habitat": 2.32,
+            "Eau": 0.11,
+            "Culture": 10.19
+          }
+        },
+        "susceptibility_buffer_pct": {
+          "250": {
+            "Faible": 0.0,
+            "Moyenne": 55.33,
+            "Forte": 44.67
+          },
+          "500": {
+            "Faible": 2.11,
+            "Moyenne": 44.93,
+            "Forte": 52.96
+          },
+          "1000": {
+            "Faible": 3.18,
+            "Moyenne": 49.68,
+            "Forte": 47.14
+          },
+          "2000": {
+            "Faible": 4.43,
+            "Moyenne": 53.81,
+            "Forte": 41.76
+          }
+        },
+        "physical_source": "Traitements SIG transmis le 22 septembre 2026",
+        "updated_at": "2026-09-22",
+        "updated_by": "Dilma Honorine (mention portée sur les cartes transmises)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1983496,
+          10.2858223
+        ]
+      },
+      "properties": {
+        "name": "Doinsera-Birifor",
+        "locality": "Doinsera-Birifor",
+        "survey_n": 40,
+        "iprm": 70.42,
+        "ica": 30.0,
+        "knowledge_use_pct": 57.5,
+        "knowledge_danger_pct": 25.0,
+        "sensitized_pct": 15.0,
+        "alternative_water_pct": 12.5,
+        "factor_scores": {
+          "geology": 4,
+          "soil": 5,
+          "slope": 2,
+          "hydro": 3
+        },
+        "physical_wlc": 3.4194,
+        "susceptibility_class": 2,
+        "susceptibility_label": "Moyenne",
+        "landcover_class": 5,
+        "landcover_label": "Culture",
+        "landcover_distance_m": {
+          "Végétation": 9.8,
+          "Sol nu": 627.9,
+          "Habitat": 59.9,
+          "Eau": 773.3,
+          "Culture": 0.0
+        },
+        "landcover_buffer_pct": {
+          "250": {
+            "Végétation": 82.43,
+            "Sol nu": 0.0,
+            "Habitat": 0.7,
+            "Eau": 0.0,
+            "Culture": 16.87
+          },
+          "500": {
+            "Végétation": 82.28,
+            "Sol nu": 0.0,
+            "Habitat": 0.66,
+            "Eau": 0.0,
+            "Culture": 17.06
+          },
+          "1000": {
+            "Végétation": 88.2,
+            "Sol nu": 0.02,
+            "Habitat": 1.36,
+            "Eau": 0.19,
+            "Culture": 10.23
+          },
+          "2000": {
+            "Végétation": 90.59,
+            "Sol nu": 0.07,
+            "Habitat": 1.62,
+            "Eau": 0.06,
+            "Culture": 7.67
+          }
+        },
+        "susceptibility_buffer_pct": {
+          "250": {
+            "Faible": 0.0,
+            "Moyenne": 73.68,
+            "Forte": 26.32
+          },
+          "500": {
+            "Faible": 2.0,
+            "Moyenne": 52.04,
+            "Forte": 45.96
+          },
+          "1000": {
+            "Faible": 3.04,
+            "Moyenne": 41.76,
+            "Forte": 55.2
+          },
+          "2000": {
+            "Faible": 4.1,
+            "Moyenne": 48.53,
+            "Forte": 47.36
+          }
+        },
+        "physical_source": "Traitements SIG transmis le 22 septembre 2026",
+        "updated_at": "2026-09-22",
+        "updated_by": "Dilma Honorine (mention portée sur les cartes transmises)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1946081,
+          10.3647275
+        ]
+      },
+      "properties": {
+        "name": "Dyikando",
+        "locality": "Dyikando",
+        "survey_n": 34,
+        "iprm": 75.0,
+        "ica": 28.68,
+        "knowledge_use_pct": 85.29,
+        "knowledge_danger_pct": 47.06,
+        "sensitized_pct": 8.82,
+        "alternative_water_pct": 8.82,
+        "factor_scores": {
+          "geology": 3,
+          "soil": 5,
+          "slope": 2,
+          "hydro": 5
+        },
+        "physical_wlc": 3.6957,
+        "susceptibility_class": 3,
+        "susceptibility_label": "Forte",
+        "landcover_class": 3,
+        "landcover_label": "Habitat",
+        "landcover_distance_m": {
+          "Végétation": 9.9,
+          "Sol nu": 9.8,
+          "Habitat": 0.0,
+          "Eau": 249.9,
+          "Culture": 19.7
+        },
+        "landcover_buffer_pct": {
+          "250": {
+            "Végétation": 60.13,
+            "Sol nu": 2.79,
+            "Habitat": 28.82,
+            "Eau": 0.05,
+            "Culture": 8.21
+          },
+          "500": {
+            "Végétation": 65.53,
+            "Sol nu": 4.31,
+            "Habitat": 17.12,
+            "Eau": 0.22,
+            "Culture": 12.82
+          },
+          "1000": {
+            "Végétation": 61.72,
+            "Sol nu": 5.29,
+            "Habitat": 11.39,
+            "Eau": 0.74,
+            "Culture": 20.86
+          },
+          "2000": {
+            "Végétation": 64.43,
+            "Sol nu": 2.5,
+            "Habitat": 12.17,
+            "Eau": 1.41,
+            "Culture": 19.49
+          }
+        },
+        "susceptibility_buffer_pct": {
+          "250": {
+            "Faible": 0.0,
+            "Moyenne": 44.6,
+            "Forte": 55.4
+          },
+          "500": {
+            "Faible": 0.0,
+            "Moyenne": 45.97,
+            "Forte": 54.03
+          },
+          "1000": {
+            "Faible": 7.91,
+            "Moyenne": 42.27,
+            "Forte": 49.81
+          },
+          "2000": {
+            "Faible": 18.36,
+            "Moyenne": 45.32,
+            "Forte": 36.32
+          }
+        },
+        "physical_source": "Traitements SIG transmis le 22 septembre 2026",
+        "updated_at": "2026-09-22",
+        "updated_by": "Dilma Honorine (mention portée sur les cartes transmises)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.2057028,
+          10.2032606
+        ]
+      },
+      "properties": {
+        "name": "Gongombili Pablouna",
+        "locality": "Gongombili Pablouna",
+        "survey_n": 60,
+        "iprm": 71.11,
+        "ica": 37.5,
+        "knowledge_use_pct": 61.67,
+        "knowledge_danger_pct": 31.67,
+        "sensitized_pct": 3.33,
+        "alternative_water_pct": 16.67,
+        "factor_scores": {
+          "geology": 2,
+          "soil": 4,
+          "slope": 2,
+          "hydro": 2
+        },
+        "physical_wlc": 2.729,
+        "susceptibility_class": 2,
+        "susceptibility_label": "Moyenne",
+        "landcover_class": 1,
+        "landcover_label": "Végétation",
+        "landcover_distance_m": {
+          "Végétation": 0.0,
+          "Sol nu": 40.9,
+          "Habitat": 79.5,
+          "Eau": 505.5,
+          "Culture": 9.8
+        },
+        "landcover_buffer_pct": {
+          "250": {
+            "Végétation": 66.4,
+            "Sol nu": 1.34,
+            "Habitat": 1.54,
+            "Eau": 0.0,
+            "Culture": 30.71
+          },
+          "500": {
+            "Végétation": 76.61,
+            "Sol nu": 0.47,
+            "Habitat": 1.8,
+            "Eau": 0.0,
+            "Culture": 21.11
+          },
+          "1000": {
+            "Végétation": 74.88,
+            "Sol nu": 0.41,
+            "Habitat": 2.02,
+            "Eau": 0.06,
+            "Culture": 22.63
+          },
+          "2000": {
+            "Végétation": 86.35,
+            "Sol nu": 0.29,
+            "Habitat": 1.17,
+            "Eau": 0.13,
+            "Culture": 12.06
+          }
+        },
+        "susceptibility_buffer_pct": {
+          "250": {
+            "Faible": 8.99,
+            "Moyenne": 91.01,
+            "Forte": 0.0
+          },
+          "500": {
+            "Faible": 28.52,
+            "Moyenne": 71.01,
+            "Forte": 0.47
+          },
+          "1000": {
+            "Faible": 25.59,
+            "Moyenne": 57.0,
+            "Forte": 17.41
+          },
+          "2000": {
+            "Faible": 34.89,
+            "Moyenne": 46.76,
+            "Forte": 18.35
+          }
+        },
+        "physical_source": "Traitements SIG transmis le 22 septembre 2026",
+        "updated_at": "2026-09-22",
+        "updated_by": "Dilma Honorine (mention portée sur les cartes transmises)"
+      }
+    }
+  ],
+  "metadata": {
+    "physical_layers_updated_at": "2026-09-22",
+    "processed_at": "2026-09-30",
+    "responsible": "Dilma Honorine (mention portée sur les cartes transmises)",
+    "crs": "EPSG:32630",
+    "grid_resolution_m": 30.0,
+    "sources": [
+      "geologie.tif",
+      "pedologie.tif",
+      "pente.tif",
+      "ydrographie traiter.tif",
+      "occupation des sol.tif",
+      "suceptibilité physique.shp"
+    ]
+  }
+}

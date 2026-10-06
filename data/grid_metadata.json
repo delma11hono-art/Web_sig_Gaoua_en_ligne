@@ -1,0 +1,50 @@
+{
+  "crs": "EPSG:32630",
+  "width": 1166,
+  "height": 1381,
+  "transform": [
+    30.0,
+    0.0,
+    459854.0572,
+    0.0,
+    -30.0,
+    1165874.959
+  ],
+  "resolution_m": 30.0,
+  "wgs84_bounds": [
+    [
+      10.171934583935172,
+      -3.3665020595101374
+    ],
+    [
+      10.546844642306947,
+      -3.047217524802581
+    ]
+  ],
+  "distance_unit_m": 30.0,
+  "distance_nodata": 255,
+  "factor_channels": {
+    "grid_scores_a.png": [
+      "geology",
+      "soil",
+      "slope"
+    ],
+    "grid_scores_b.png": [
+      "hydro",
+      "susceptibility",
+      "landcover"
+    ]
+  },
+  "distance_channels": {
+    "grid_distance_a.png": [
+      "Végétation",
+      "Sol nu",
+      "Habitat"
+    ],
+    "grid_distance_b.png": [
+      "Eau",
+      "Culture",
+      "unused"
+    ]
+  }
+}
